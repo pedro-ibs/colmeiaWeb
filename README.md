@@ -119,3 +119,35 @@ CREATE TABLE DEVICE( ID NUMERIC(4, 0) NOT NULL, NOME CHAR(25), DESCRICAO CHAR(50
 CREATE TABLE COMANDO( ID NUMERIC(4, 0) NOT NULL, CMD CHAR(25) NOT NULL, DESCRICAO CHAR(50), PRIMARY KEY (ID));
 QUIT;
 ```
+
+## **arquivos da página web**
+
+Primeiro em **/var/www/html** o mesmo local da página do servidor apache, criaremos uma pasta chamada **sites** e daremos  o privilégio de edição para o usuário pi:
+
+```
+cd /var/www/html/
+sudo mkdir sites
+sudo chown pi sites
+``` 
+
+Agora basta clonar o repositório da página web COLMEIA:
+
+```
+cd sites
+git clone https://github.com/pedro-ibs/colmeiaWeb
+```
+
+Agora podemos acessar o Site normalmente no meu caso o acesso da página web é “ http://10.42.0.119/sites/colmeia/index.html ” isso pode mudar conforme o ip e o directotio que decidiu colocar os arquivos (sempre abaixo de /var/www/html/).
+
+
+
+# **Dicas e Notas**
+Desenvolver um projeto em um bom editor de texto ou IDE é muito importante para produtividade, como instalei a versão lite (que não tem interface gráfica) do Raspbian e pela própria natureza da raspberry (pouca capacidade de processamento e memória ram) não é muito produtivo utilizá-la para desenvolver(escrever) o código, por esse motivo utilizei o Visual Code para desenvolver o projeto, para isso usei a extensão chamada [SSJ FS](https://github.com/SchoofsKelvin/vscode-sshfs) onde podemos editar os arquivos vias ssh através do Visual Code.
+
+### **Outras Imagens do site**
+
+![home](img/git/home.png)
+![detalhes](img/git/etc.png)
+![sobre](img/git/sobre.png)
+![painel de controle](img/git/clt.png)
+
