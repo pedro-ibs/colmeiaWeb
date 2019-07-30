@@ -84,7 +84,7 @@ display_errors = On
 
 ![php.ini](img/git/phpini.png)
 
-a linha **;alpacas** é só um recurso para que eu ache a linha que editei mais facilmente com a ferramenta de pesquisa do editor de texto, logo ela não é necessária.
+A linha **;alpacas** é só um recurso para que eu ache a linha que editei mais facilmente com a ferramenta de pesquisa do editor de texto, logo ela não é necessária.
 
 ## **Configurando Banco de Dados**
  
@@ -115,10 +115,7 @@ mycli -h localhost -u lp1bd -p 12345
 
 ```
 USE COLMEIA;
-
 CREATE TABLE DEVICE( ID NUMERIC(4, 0) NOT NULL, NOME CHAR(25), DESCRICAO CHAR(50),  IMG VARCHAR(1024), PRIMARY KEY (ID));
-
 CREATE TABLE COMANDO( ID NUMERIC(4, 0) NOT NULL, CMD CHAR(25) NOT NULL, DESCRICAO CHAR(50), PRIMARY KEY (ID));
-
 QUIT;
 ```
