@@ -1,0 +1,360 @@
+html, .myBody{
+	background: radial-gradient(#21052e, black) no-repeat center fixed;
+	background-size: cover;
+	scrollbar-color: #320447 transparent;
+}
+
+
+/********************************************************************************************************************/
+/* HADERR  */
+header{
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	left: 0;
+
+	padding-left: 1%;
+	padding-right: 1%;
+	width: 100%;
+
+	background: #21052e;
+}
+
+
+/********************************************************************************************************************/
+/* PAGE  */
+section{
+	position: relative;
+	z-index: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin-top: 10%;
+	margin-bottom: 10%;
+}
+
+
+/********************************************************************************************************************/
+/* PAGE  */
+
+
+/* controle do paginador  */
+.myNone{ display: none;}
+.myPage{ margin-left: 5px; margin-right: 5px; }
+
+.myPage{
+	/*display: none;*/
+	transition: opacity 1s ease-out;
+	opacity: 0; 
+	height: 0;
+	overflow: hidden;
+
+}
+
+input[ name="menuMain"  ]:checked + div{
+	opacity: 1;
+	height: auto;
+}
+
+/* controle do paginador de formulario */
+.myPageForm {
+	transition:  all 1s;
+	opacity: 0; 
+	height: 0;
+	overflow: hidden;
+}
+
+input[ name="formDevice"  ]:checked + div{
+	transition: all  1s;
+	opacity: 1;
+	height: 256px;
+}
+
+input[ name="formComando"  ]:checked + div{
+	transition: all  1s;
+	opacity: 1;
+	height: 227px;
+}
+
+
+/* texto Comum*/
+.myTextC{
+	font-family: 'Share Tech Mono', monospace;
+	font-size: medium;
+	color: White;
+	text-align: justify;
+}
+
+/* texto Comum e Especial */
+.myTextE, .mySubTitle, .myTitle, .myInput, .myBtn{
+	font-family: 'Source Code Pro', monospace;
+	text-align: center;
+	text-transform: capitalize;
+	font-weight: bold;
+	color: White;
+}
+
+#sbr{ margin-top: 24px; }
+
+
+/* bloco colorido para Objetos*/
+.myBlockC,  .myTitle, .mySubTitle, .myInput, .myBtn{ 
+	background: #320447;
+	border-radius: 4px;
+	border: 0px;
+	width: 100%;
+}
+
+
+/* borda especiais Visivel*/
+.myBorderV{
+	border: #4f066d;
+	/*border-top-style: solid;*/
+	border-bottom-style: solid;
+	border-width:1px;
+	margin-left:5px; 
+	margin-right:5px;
+}
+
+/* borda especiais invisivel*/
+.myBorderI, .myInput, .myBtn{
+	margin-left:5px;
+	margin-right:5px;
+	margin-top:5px;
+	margin-bottom:5px;
+	width: 100%;
+}
+
+.myBtn{ 
+	background: #4f066d;
+	cursor: pointer;
+	transition: 0.5s;
+	max-height: 24px;
+	width: 100%;
+}
+
+.myBtn:hover{ background-color:  #35007a; }
+.myBtn:active{ background-color:  #2b0062; }
+
+
+/* Titulo padro  */
+.myTitle, .mySubTitle {
+	border-radius: 4px;
+	margin-top: 5px;
+	/*margin-left: 0%;
+	margin-right: 0%;*/
+}
+
+/* tamanho dos titulos */
+.myTitle{ font-size: 170%; }
+.mySubTitle{ font-size: 100%; }
+
+.myInput{ background-color: #35007a; }
+
+.myForm, .myTextC{
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.myForm{
+	vertical-align: middle;
+	align-items: center;
+	height: 100%;
+}
+
+
+form{
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/* estilo dos botoes de comando e servidores */
+.myDex{ 
+	/*display: none;*/
+	transition:  0.2s;
+	opacity: 0; 
+	height: 0;
+	overflow: hidden;
+}
+
+button[id='rumCMDbtn']:hover + div{
+	opacity: 1;
+	height: 24px;
+}
+
+
+/* menu de dispositivos */
+.myIMG, .myIMGfooter, .myImgAbout{
+	display: flex;
+	justify-content: center;
+}
+	
+.myIMG{
+	height: 120px;
+	width: 200px;
+
+	min-height: 120px;
+	min-width: 200px;
+
+	max-height: 120px;
+	max-width: 200px;
+
+	cursor: pointer;
+
+}
+
+.myImgAbout{
+	height: 256px;
+	width: 256px;
+
+	min-height: 256px;
+	min-width: 256px;
+
+	max-height: 256px;
+	max-width: 256px;
+}
+
+
+.myDiveMenu{
+	overflow-y: scroll;
+	height: auto;
+	max-height: 480px;
+}
+
+a{
+	text-decoration: none;
+	transition-delay: 0s;
+	transition-duration: 0.25s;
+	color: White;
+}
+
+a:hover{
+	opacity: 0.75;
+	color: Green;
+	text-decoration: none;
+	
+}
+
+
+.myMore{
+	text-decoration: none;
+	transition-delay: 0s;
+	transition-duration: 0.25s;
+	color: White;
+}
+
+.myMore:hover{
+	color: Green;
+	text-decoration: none;
+}
+
+
+
+
+
+/********************************************************************************************************************/
+/* FOOTER  */
+footer{
+	position: fixed;
+	z-index: 1;
+	bottom: 0;
+	right: 0;
+	left: 0;
+
+	padding-top: 5px;
+	padding-bottom: 2px;
+	padding-left: 12.5%;
+	padding-right: 12.5%;
+	height: auto;
+
+	background: #21052e;
+	display: inline-block;
+}
+
+figcaption, .myImgFooter{
+	display: inline-block;
+	text-align: center;
+	text-transform: capitalize;
+	
+}
+
+.myLabelFooter{ transition-duration: 0.25s; }
+.myLabelFooter:hover{
+	opacity: 0.75;
+	color: Green;
+	cursor: pointer;
+}
+
+.myImgFooter{
+	border-radius: 4px;
+	width: 64px;
+	height: 64px;
+}
+
+
+figure{ margin-left: 15px; }
+
+/*texto para terminel*/
+.myTextT{
+	font-family: 'Inconsolata', monospace;
+	font-size: medium;
+	text-align: justify;
+	background: plum;
+	color: brown;
+
+	border-radius: 4px;
+	height: 64px;
+	width: auto;
+
+	margin-left: 15px;
+
+	cursor: pointer;
+
+}
+
+
+
+
+/********************************************************************************************************************/
+ /* Popup container */
+
+ .mySelect{
+	background: transparent;
+	direction: none;
+	border: 0;
+}
+
+
+ .myPopup{
+	background: rgba(12, 1, 22, 0.979);
+	display: none;
+	
+	position: fixed;
+	z-index: 0;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	margin: auto;
+	border-radius: 16px;
+	width: 50%;
+	height: 40%;
+	max-height: 250px;
+
+ }
+
+
+ button[id='more']:focus + div{
+	display: block;
+	z-index: 3;
+}
+
+
+.myCenter{
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;;
+}

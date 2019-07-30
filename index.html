@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		
+		<meta name='descripton' content='Projeto 1 de LP1' />
+		<meta name='author' content='Pedro Igor B. S. GU3003094' />
+		<meta name='generator' content='visualCode'/>
+		<meta name='keywords' content='HAL-900, automacao, assistente' />
+		<link rel="icon" type="imagem" href="./img/logo.jpeg" />
+		
+		<title>Colmeia</title>
+		<meta name='viewport' content='width=device-width, initial-scale=1' />
+
+		<!--
+		<link href='./bootstrap-4.3.1-dist/css/bootstrap.css' rel='stylesheet'>
+		<link href='./bootstrap-4.3.1-dist/css/bootstrap-grid.css' rel='stylesheet'>
+		<link href='./bootstrap-4.3.1-dist/css/bootstrap-grid.min.css' rel='stylesheet'>
+		<link href='./bootstrap-4.3.1-dist/css/bootstrap.min.css' rel='stylesheet'>
+		<link href='./bootstrap-4.3.1-dist/css/bootstrap-reboot.css' rel='stylesheet'>
+		<link href='./bootstrap-4.3.1-dist/css/bootstrap-reboot.min.css' rel='stylesheet'>
+		<link href='./bootstrap-4.3.1-dist/etc/mdb.min.css' rel='stylesheet'>
+		<link href='./bootstrap-4.3.1-dist/etc/bootstrap.min.css' rel='stylesheet' >
+		<script src='./bootstrap-4.3.1-dist/etc/jquery-3.3.1.slim.min.js'></script>
+		<script src='./bootstrap-4.3.1-dist/etc/popper.min.js'></script>
+		<script src='./bootstrap-4.3.1-dist/etc/bootstrap.min.js'></script>
+		<link href='./fonts/googlefonts' rel='stylesheet'>
+		-->
+		
+		<!-- bootstrap  -->
+		<link href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css' rel='stylesheet'>
+		<link href='https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.9/css/mdb.min.css' rel='stylesheet'>
+		<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css'>
+		<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js'></script>
+		
+		<!-- google fonts  -->		
+		<link href='https://fonts.googleapis.com/css?family=Share+Tech+Mono' rel='stylesheet'>
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
+		
+
+		<!-- java script  -->
+		<script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
+		<script src='http://malsup.github.io/jquery.form.js'></script>
+
+		<!-- meus estilos  -->
+		<link href='./myCSS/main.css' rel='stylesheet'>	
+
+	</head>
+
+	<body class="container myBody Estica">
+		<header>
+			<div class="myTitle">Sistema colmeia</div>
+			<div class=" row">
+				<label for="_home"	class="myBtn col"> Home </label>
+				<label for="_sobre"	class="myBtn col"> Sobre </label>
+				<label for="_controle"	class="myBtn col"> Painel de Controle </label>
+			</div>
+
+		</header>
+
+		<section>
+			<!---------------------------------------------------------------------------------------------------------------------->
+			<input id="_home"  class="myNone"  type="radio" name="menuMain" checked>
+			<div class="myPage row">
+				<div class="row myBorderI">
+					<form class="row myBorderI col"  method="POST" ajax="true" action="./myPHP/comando/cmdProcura.php" id="Scmd">
+						<div class="mySubTitle"> filtrar comandos </div>
+						<div class="col myBorderI myForm">
+							<div class="row">
+								<input class="myInput row" type="text" name="cmd" minlength="1" maxlength="100" placeholder="buscar comandos"/>
+							</div>
+							<div class="row">
+								<input class="myBtn col" type="submit"  value="Buscar" />
+								<input id="Scls" class="myBtn col" type="reset" value="Limpar" />
+							</div>
+							<div class="row myBorderI myDiveMenu" id="printBtnCmd"></div>
+						</div>
+					</form>
+					<form class="row myBorderI col"  method="POST" ajax="true" action="./myPHP/device/devProcura.php" id="Sdev">
+						<div class="mySubTitle">filtrar dispositivos</div>			
+						<div class="col myBorderI myForm">
+							<div class="row">
+								<input class="myInput row" type="text" name="servNAME"  minlength="1" maxlength="25" placeholder="busar Seividore"/>
+							</div>
+							<div class="row">
+								<input class="myBtn col" type="submit"  value="Buscar" />
+								<input id="Scls" class="myBtn col" type="reset" value="Limpar" />
+							</div>
+							<div class="row myBorderI myDiveMenu" id="printBtnDev"></div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<!---------------------------------------------------------------------------------------------------------------------->
+			<input id="_sobre" class="myNone" type="radio" name="menuMain" >
+			<div class="myPage  row">
+				<div class="row myBorderI Estica">
+					<img src='./img/logo.jpeg' class="row myCenter">
+					
+					<p id="sbr" class="myTextC">O sistema colmeia tem esse nome por ser inspirado em como a própria colmeia é construída e em como as abelhas se comportam entre si, aproximando-se em um conceito de unidade.</p>
+					<p id="sbr" class="myTextC">Em Palavras simples as abelhas se comunicam como se estivesse em uma rede, propagando a informação entre todos as abelhas de sua colmeia, a ideia desse sistema consiste em algo próximo disso descentralizando o controle e propagando uma série de informações e principalmente compartilhando recursos. Dessa forma a rede funciona com uma robustez extremamente alta e independente de um computador de alto desempenho, nesse ponto a rede colmeia se torna cada vez mais robusta e flexível na medida em que a quantidade e a variedade de dispositivos aumenta.</p>
+					<p id="sbr" class="myTextC">Dessa forma a rede colmeia tem grande potencial para se tornar uma inteligência artificial capaz de operar em ambientes hostis como em acidentes nucleares ou exploração espacial, além de possibilitar o autogerenciamento de sistemas complexos como a malha autônoma  metroviária e ou rodoviária, integrando a logística de distribuição de recursos e locomoção de pessoas, conectando todos os pontos do processo desde a fabricação até o uso e consumo.</p>
+
+					<div id="sbr" class="row myBorderI">
+						<img src='./img/eu.jpg' class='col myImgAbout'>
+						<div class="col">
+							<div class="row myBorderI">
+								<div class="row myTextC">
+										<p> Pedro Igoe Igor Borçatti da Silva, GU3003094 </p>
+										<p> Formando em Tecnologia em Analise em desenvolvimento de sistema, primeiro semestre noturno.
+										Tambem formado em Tecnologia em Automação Industrial e membro do Grupo de Estudos em Robótica e Sistemas
+										Embarcados <a target="_blank" id="GERSE" href="http://gerserobotica.com/">GERSE</a>.</p>
+								</div>
+
+								<div class="row myTextC">
+										<figure>
+											<a target="_blank" href="https://github.com/pedro-ibs" class="myCenter">
+												<img src='./img/26943680.png' class='myImgFooter'>
+												<figcaption>Meu github</figcaption>				
+											</a>
+										</figure>
+
+
+										<figure>
+											<a target="_blank" href="http://gerserobotica.com/">
+												<img src='./img/48525795.jpeg' class='myImgFooter'>			
+												<figcaption>Site GERSE</figcaption>
+											</a>
+										</figure>
+
+										<figure>
+											<a target="_blank" href="https://www.embarcados.com.br/eclipse-para-microcontroladores-avr/">
+												<img src='./img/atr.jpg' class='myImgFooter'>			
+												<figcaption>Artigos</figcaption>
+											</a>
+										</figure>
+
+
+										<figure>
+											<a target="_blank" href="https://www.instagram.com/pedro_ibs/">
+												<img src='./img/social.jpeg' class='myImgFooter'>			
+												<figcaption>Instagram</figcaption>
+											</a>
+										</figure>
+
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<!---------------------------------------------------------------------------------------------------------------------->
+			<input id="_controle" class="myNone" type="radio" name="menuMain" >
+			<div class="myPage row">
+				<div class="row myBorderI">
+					<div class="mySubTitle">configurando Dispositivos</div>
+					<div class="col">
+						<div class="row myTextC myBorderI">
+							<p id="sbr">Todos os campos do dispositivo são obrigatórios, o mesmo deve conter ID, IMAGEM, um NOME e Uma DESCRIÇÃO.</p>
+							<p id="sbr">A Função do dispositivo é executar comando coletar dados e transmitir a informação que o mesmo gera e ou que recebe, a informação é transmitida em pequenos núcleos e testada por outra camadas de dispositivos para tentar evitar comandos malignos ou ações que coloquem a própria rede em perigo.</p>
+						</div>
+					</div>
+					<div class="col myBorderI myForm">
+						<div class="myMenu myBorderV row">
+							<label for="DeviceADD"	class="myBtn col"> Adicionar </label>
+							<label for="DeviceATT"	class="myBtn col"> Atualizar </label>
+							<label for="DeviceRM"	class="myBtn col"> Remover </label>
+						</div>
+
+
+						<input id="DeviceADD" class="myNone"  type="radio" name="formDevice" checked>
+						<div class="myPageForm">
+							<form class="row myBorderI"  method="POST" action="./myPHP/device/bdADD.php" ajax="true" id="ajax_formDevADD">
+								<div class="col myBorderI myForm">
+									<div class="row">
+										<input class="myInput row" type="text" name="devID" placeholder="codigo ID" pattern="^[1-9][0-9]{1,3}$" required/>
+										<input class="myInput row" type="text" name="devNome" minlength="1" maxlength="25" placeholder="Nome do Dispositivo" required/>
+										<input class="myInput row" type="text" name="devIMG" maxlength="1024" placeholder="URL da imagem" required/>										
+										<textarea class="myInput row" name="devDES"  minlength="1" maxlength="50"  placeholder="descrição" required></textarea>
+									</div>
+									<div class="row">
+										<input class="myBtn col" type="submit"  value="Adicionar" />
+										<input id="Pclt"  class="myBtn col" type="reset" value="Limpar" />
+									</div>
+								</div>
+							</form>	
+						</div>
+
+
+						<input id="DeviceATT" class="myNone"  type="radio" name="formDevice">
+						<div class="myPageForm">
+							<form class="row myBorderI"  method="POST" action="./myPHP/device/bdATT.php" ajax="true" id="ajax_formDevATT">
+								<div class="col myBorderI myForm">
+									<div class="row">
+										<input class="myInput row" type="text" name="devID"	placeholder="codigo ID"  pattern="^[1-9][0-9]{1,3}$" required/>
+										<input class="myInput row" type="text" name="NdevID"	placeholder="Novo codigo ID"  pattern="^[1-9][0-9]{1,3}$"/>									
+										<input class="myInput row" type="text" name="devNome"  minlength="1" maxlength="25" placeholder="novo Nome do Dispositivo"/>
+										<input class="myInput row" type="text" name="devIMG" maxlength="1024" placeholder="nova da imagem (URL)"/>
+										<textarea class="myInput row" name="devDES"  minlength="1" maxlength="50"  placeholder="nova descrição" ></textarea>
+									</div>
+									<div class="row">
+										<input class="myBtn col" type="submit"  value="Atualizar" />
+										<input id="Pclt"  class="myBtn col" type="reset" value="Limpar" />
+									</div>
+								</div>
+							</form>	
+						</div>
+
+						<input id="DeviceRM" class="myNone"  type="radio" name="formDevice">
+						<div class="myPageForm">
+							<form class="row myBorderI"  method="POST" action="./myPHP/device/bdRM.php" ajax="true" id="ajax_formDevRM">
+								<div class="col myBorderI myForm">
+									<div class="row">
+										<input class="myInput row" type="text" name="devID" placeholder="codigo ID" required  pattern="^[1-9][0-9]{1,3}$"/>
+									</div>
+									<div class="row">
+										<input class="myBtn col" type="submit"  value="Remover" />
+										<input id="Pclt"  class="myBtn col" type="reset" value="Limpar" />
+									</div>
+								</div>
+							</form>	
+						</div>
+
+						
+					</div>
+				</div>
+
+
+				<div class="row myBorderI">
+					<div class="mySubTitle">configurando comandos</div>
+					<div class="col">
+							<div class="row myTextC myBorderI">
+									<p id="sbr">Todos os campos do comando são obrigatórios, o mesmo deve conter ID, um NOME e Uma DESCRIÇÃO.</p>
+									<p id="sbr">A função do comando é controlar um dispositivo ou um grupo de dispositivo, o comando vai ser propagar pelos nós (outros dispositivos) até que chegue no dispositivo que o comando é destinado.</p>
+								</div>
+					</div>
+					<div class="col myBorderI myForm">
+						<div class="myMenu myBorderV row">
+							<label for="ComandoADD"	class="myBtn col"> Adicionar </label>
+							<label for="ComandoATT"	class="myBtn col"> Atualizar </label>
+							<label for="ComandoRM"	class="myBtn col"> Remover </label>
+						</div>
+
+						<input id="ComandoADD" class="myNone"  type="radio" name="formComando" checked>
+						<div class="myPageForm">
+							<form class="row myBorderI"  method="POST" action="./myPHP/comando/bdADD.php" ajax="true"  id="ajax_formCmdADD">
+								<div class="col myBorderI myForm">
+									<div class="row">
+										<input class="myInput row" type="text" name="idCmd" placeholder="ID do comando" pattern="^[1-9][0-9]{1,3}$" required/>
+										<input class="myInput row" type="text" name="cmdName" minlength="1" maxlength="100" placeholder="nome do comando" required/>
+										<textarea class="myInput row" name="cmdDES"  minlength="1" maxlength="50"  placeholder="descrição" required></textarea>
+									</div>
+								
+									<div class="row">
+										<input class="myBtn col" type="submit"  value="Adicionar" />
+										<input id="Pclt"  class="myBtn col" type="reset" value="Limpar" />
+									</div>
+								</div>
+							</form>	
+						</div>
+
+						<input id="ComandoATT" class="myNone"  type="radio" name="formComando">
+						<div class="myPageForm">
+							<form class="row myBorderI"  method="POST" action="./myPHP/comando/bdATT.php" ajax="true"  id="ajax_formCmdATT">
+								<div class="col myBorderI myForm">
+									<div class="row">
+										<input class="myInput row" type="text" name="idCmd"  placeholder="ID do comando"  pattern="^[1-9][0-9]{1,3}$" required/>
+										<input class="myInput row" type="text" name="newIdCmd"  placeholder="novo ID do comando" pattern="^[1-9][0-9]{1,3}$"/>										
+										<input class="myInput row" type="text" name="cmdName" minlength="1" maxlength="100" placeholder="novo nome comando"/>
+										<textarea class="myInput row" name="cmdDES"  minlength="1" maxlength="50"  placeholder="nova descrição"></textarea>
+									</div>
+								
+									<div class="row">
+										<input class="myBtn col" type="submit"  value="Atualizar" />
+										<input id="Pclt"  class="myBtn col" type="reset" value="Limpar" />
+									</div>
+								</div>
+							</form>
+						</div>
+						
+
+						<input id="ComandoRM" class="myNone"  type="radio" name="formComando">
+						<div class="myPageForm">
+							<form class="row myBorderI"  method="POST" action="./myPHP/comando/bdRM.php" ajax="true"  id="ajax_formCmdRM">
+								<div class="col myBorderI myForm">
+									<div class="row">
+										<input class="myInput row" type="text" name="idCmd"  placeholder="ID do comando" pattern="^[1-9][0-9]{1,3}$" required/>
+									</div>
+								
+									<div class="row">
+										<input class="myBtn col" type="submit"  value="Remover" />
+										<input id="Pclt"  class="myBtn col" type="reset" value="Limpar" />
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<footer class="myTextC row">		
+			<p  class="myTextT col" id="myTerminal"></p>
+			
+			<figure>
+				<a target="_blank" href="https://github.com/pedro-ibs">
+					<img src='./img/26943680.png' class='myImgFooter'>
+					<figcaption>Meu github</figcaption>				
+				</a>
+			</figure>
+			<figure>
+				<a target="_blank" href="http://gerserobotica.com/">
+					<img src='./img/48525795.jpeg' class='myImgFooter'>			
+					<figcaption>Site GERSE</figcaption>
+				</a>
+			</figure>
+
+			<label class="myLabelFooter"  for="_sobre">
+				<figure >
+						<img src='./img/eu.jpg' class='myImgFooter'>			
+						<figcaption>Autor</figcaption>
+				</figure>			
+			</label>
+		</footer>
+	</body>
+
+	<script type='text/javascript'>
+		window.onload = function(){
+			$(document).ready(function(){
+				$('#ajax_formDevADD').ajaxForm({ 
+					target: '#myTerminal', 
+					success: function() { 
+						$('#myTerminal').fadeIn('slow'); 
+					} 
+				});
+
+				$('#ajax_formDevATT').ajaxForm({ 
+					target: '#myTerminal', 
+					success: function() { 
+						$('#myTerminal').fadeIn('slow'); 
+					} 
+				});
+
+				$('#ajax_formDevRM').ajaxForm({ 
+					target: '#myTerminal', 
+					success: function() { 
+						$('#myTerminal').fadeIn('slow'); 
+					} 
+				});
+
+
+				$('#ajax_formCmdADD').ajaxForm({ 
+					target: '#myTerminal', 
+					success: function() { 
+						$('#myTerminal').fadeIn('slow'); 
+					} 
+				});
+
+
+				$('#ajax_formCmdATT').ajaxForm({ 
+					target: '#myTerminal', 
+					success: function() { 
+						$('#myTerminal').fadeIn('slow'); 
+					} 
+				});
+
+
+
+				$('#ajax_formCmdRM').ajaxForm({ 
+					target: '#myTerminal', 
+					success: function() { 
+						$('#myTerminal').fadeIn('slow'); 
+					} 
+				});
+
+
+				$('#Sdev').ajaxForm({ 
+					target: '#printBtnDev', 
+					success: function() { 
+						$('#printBtnDev').fadeIn('slow');
+						$('button[ id=conctDevBtn ]' ).click(function(){ var Status = $(this).val(); $.ajax({ method: "POST", url: './myPHP/device/conctDev.php', data: { BTN: Status }, async: false, success: function(result){ $('#myTerminal').html(result);}});});
+					} 
+				});
+
+				$('#Scmd').ajaxForm({ 
+					target: '#printBtnCmd', 
+					success: function() { 
+						$('#printBtnCmd').fadeIn('slow');
+						$('button[ id=rumCMDbtn ]' ).click(function(){ var Status = $(this).val(); $.ajax({ method: "POST", url: './myPHP/comando/cmdExecuta.php', data: { BTN: Status }, async: false, success: function(result){ $('#myTerminal').html(result);}});});
+					}
+				});
+
+				$(document).ready(function(){
+					$.ajax({ 
+						method: "POST", url: './myPHP/comando/cmdProcura.php',
+						data: { cmd: null }, 
+						async: false,
+						success: function(result){
+							$('#printBtnCmd').html(result);
+							$('button[ id=rumCMDbtn ]' ).click(function(){ var Status = $(this).val(); $.ajax({ method: "POST", url: './myPHP/comando/cmdExecuta.php', data: { BTN: Status }, async: false, success: function(result){ $('#myTerminal').html(result);}});});
+						}
+					});
+
+					$.ajax({ 
+						method: "POST", url: './myPHP/device/devProcura.php',
+						data: { servNAME: null }, 
+						async: false,
+						success: function(result){
+							$('#printBtnDev').html(result);
+							$('button[ id=conctDevBtn ]' ).click(function(){ var Status = $(this).val(); $.ajax({ method: "POST", url: './myPHP/device/conctDev.php', data: { BTN: Status }, async: false, success: function(result){ $('#myTerminal').html(result);}});});
+						}
+					});
+
+
+
+				});
+
+				/*$('input[ type="reset" ]' ).click(function(){  $('#myTerminal').text(" "); });*/
+				$('#myTerminal' ).click(function(){  $('#myTerminal').text(" "); });
+			});
+		}
+	</script>
+</html>
